@@ -1,9 +1,12 @@
 <?php
-
+include '../../env.php';
 
 function wol() {
-    $broadcast = '<BROADCAST_ADDR>';
-    $mac = '<MACADDR>';
+    global $env;
+
+    $broadcast = $env['BROADCAST_ADDR'];
+    $mac = $env['MAC_ADDR'];
+    
     $hwaddr = pack('H*', preg_replace('/[^0-9a-fA-F]/', '', $mac));
 
     // Create Magic Packet
