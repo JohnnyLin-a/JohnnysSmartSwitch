@@ -1,4 +1,6 @@
 <?php
+
+
 function wol() {
     $broadcast = '<BROADCAST_ADDR>';
     $mac = '<MACADDR>';
