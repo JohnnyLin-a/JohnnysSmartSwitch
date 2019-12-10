@@ -1,7 +1,11 @@
 <?php
+include '../../env.php';
+
 function open() {
+    global $env;
+
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "<OPEN_LIGHT_IFTTT>");
+    curl_setopt($ch, CURLOPT_URL, $env['OPEN_LIGHT_IFTTT']);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $output = curl_exec($ch);
     curl_close($ch);
@@ -14,8 +18,10 @@ function open() {
 }
 
 function close() {
+    global $env;
+    
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "<CLOSE_LIGHT_IFTTT>");
+    curl_setopt($ch, CURLOPT_URL, $env['OPEN_LIGHT_IFTTT']);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $output = curl_exec($ch);
     curl_close($ch);
