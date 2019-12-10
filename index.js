@@ -17,7 +17,7 @@ function init() {
     globalVars.checkIcon = `<i class="fa fa-check fa-3x"></i>`;
     globalVars.timesIcon = `<i class="fa fa-times fa-3x"></i>`;
 
-    globalVars.timedOutText = '<h1>Timed out <i class="fa fa-frown-o"></i></h1>';
+    globalVars.serverErrorText = '<h1>Server error <i class="fa fa-frown-o"></i></h1>';
 }
 
 function onClickOpenComputer() {
@@ -32,8 +32,8 @@ function onClickOpenComputer() {
     xhr.send();
 
     let timeout = window.setTimeout(function() {
-        btn.innerHTML = timedOutText;
-    }, 3000);
+        btn.innerHTML = globalVars.serverErrorText;
+    }, 2000);
 
     xhr.onreadystatechange = function() {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -65,8 +65,8 @@ function onClickOpenLights() {
     xhr.send();
 
     let timeout = window.setTimeout(function() {
-        btn.innerHTML = timedOutText;
-    }, 3000);
+        btn.innerHTML = globalVars.serverErrorText;
+    }, 2000);
 
     xhr.onreadystatechange = () => {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -100,8 +100,8 @@ function onClickCloseLights() {
     xhr.send();
 
     let timeout = window.setTimeout(function() {
-        btn.innerHTML = timedOutText;
-    }, 3000);
+        btn.innerHTML = globalVars.serverErrorText;
+    }, 2000);
 
     xhr.onreadystatechange = function() {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
