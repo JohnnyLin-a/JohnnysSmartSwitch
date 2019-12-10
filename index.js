@@ -15,7 +15,7 @@ function init() {
 
     globalVars.loadingIcon = `<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>`;
     globalVars.checkIcon = `<i class="fa fa-check fa-3x"></i>`;
-    globalVars.timesIcon = `<i class="fa fa-times fa-3x"></i><span></span>`;
+    globalVars.timesIcon = `<i class="fa fa-times fa-3x"></i>`;
 }
 
 function onClickOpenComputer() {
