@@ -16,60 +16,72 @@ function init() {
     globalVars.loadingIcon = `<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>`;
     globalVars.checkIcon = `<i class="fa fa-check fa-3x"></i>`;
     globalVars.timesIcon = `<i class="fa fa-times fa-3x"></i>`;
+
+    globalVars.timedOutText = '<h1>Timed out <i class="fa fa-frown-o"></i></h1>';
 }
 
 function onClickOpenComputer() {
-    globalVars.openComputerBtn.innerHTML = globalVars.loadingIcon;
-    globalVars.openComputerBtn.disabled = true;
+    let btn = globalVars.openComputerBtn;
+    let btnText = globalVars.openComputerBtnText;
+
+    btn.innerHTML = globalVars.loadingIcon;
+    btn.disabled = true;
+
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "/api/v1/openMyComputer.php");
     xhr.send();
+
+    let timeout = window.setTimeout(function() {
+        btn.innerHTML = timedOutText;
+    }, 3000);
 
     xhr.onreadystatechange = function() {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             let json = JSON.parse(xhr.response);
             if (json.success === true) {
-                globalVars.openComputerBtn.disabled = false;
-                globalVars.openComputerBtn.innerHTML = globalVars.checkIcon;
-                window.setTimeout(function() {
-                    globalVars.openComputerBtn.innerHTML = globalVars.openComputerBtnText;
-                }, 1000);
+                btn.innerHTML = globalVars.checkIcon;
             } else {
-                globalVars.openComputerBtn.disabled = false;
-                globalVars.openComputerBtn.innerHTML = globalVars.timesIcon;
-                window.setTimeout(function() {
-                    globalVars.openComputerBtn.innerHTML = globalVars.openComputerBtnText;
-                }, 1000);
+                btn.innerHTML = globalVars.timesIcon;
             }
-                
+            
+            btn.disabled = false;
+            window.setTimeout(function() {
+                btn.innerHTML = btnText;
+            }, 1000);
+            window.clearTimeout(timeout);
         }
     };
 }
 
 function onClickOpenLights() {
-    globalVars.openLightsBtn.innerHTML = globalVars.loadingIcon;
-    globalVars.openLightsBtn.disabled = true;
+    let btn = globalVars.openLightsBtn;
+    let btnText = globalVars.openLightsBtnText;
+
+    btn.innerHTML = globalVars.loadingIcon;
+    btn.disabled = true;
 
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "/api/v1/controlLights.php?control=open");
     xhr.send();
 
+    let timeout = window.setTimeout(function() {
+        btn.innerHTML = timedOutText;
+    }, 3000);
+
     xhr.onreadystatechange = () => {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             let json = JSON.parse(xhr.response);
             if (json.success === true) {
-                globalVars.openLightsBtn.disabled = false;
-                globalVars.openLightsBtn.innerHTML = globalVars.checkIcon;
-                window.setTimeout(function() {
-                    globalVars.openLightsBtn.innerHTML = globalVars.openLightsBtnText;
-                }, 1000);
+                btn.innerHTML = globalVars.checkIcon;
             } else {
-                globalVars.openLightsBtn.disabled = false;
-                globalVars.openLightsBtn.innerHTML = globalVars.timesIcon;
-                window.setTimeout(function() {
-                    globalVars.openLightsBtn.innerHTML = globalVars.openLightsBtnText;
-                }, 1000);
+                btn.innerHTML = globalVars.timesIcon;
             }
+
+            btn.disabled = false;
+            window.setTimeout(function() {
+                btn.innerHTML = btnText;
+            }, 1000);
+            window.clearTimeout(timeout);
         }
     };
 
@@ -77,29 +89,34 @@ function onClickOpenLights() {
 }
 
 function onClickCloseLights() {
-    globalVars.closeLightsBtn.innerHTML = globalVars.loadingIcon;
-    globalVars.closeLightsBtn.disabled = true;
+    let btn = globalVars.closeLightsBtn;
+    let btnText = globalVars.closeLightsBtnText;
+
+    btn.innerHTML = globalVars.loadingIcon;
+    btn.disabled = true;
 
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "/api/v1/controlLights.php?control=close");
     xhr.send();
 
+    let timeout = window.setTimeout(function() {
+        btn.innerHTML = timedOutText;
+    }, 3000);
+
     xhr.onreadystatechange = function() {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             let json = JSON.parse(xhr.response);
             if (json.success === true) {
-                globalVars.closeLightsBtn.disabled = false;
-                globalVars.closeLightsBtn.innerHTML = globalVars.checkIcon;
-                window.setTimeout(function() {
-                    globalVars.closeLightsBtn.innerHTML = globalVars.openLightsBtnText;
-                }, 1000);
+                btn.innerHTML = globalVars.checkIcon;
             } else {
-                globalVars.closeLightsBtn.disabled = false;
-                globalVars.closeLightsBtn.innerHTML = globalVars.timesIcon;
-                window.setTimeout(function() {
-                    globalVars.closeLightsBtn.innerHTML = globalVars.openLightsBtnText;
-                }, 1000);
+                btn.innerHTML = globalVars.timesIcon;
             }
+
+            btn.disabled = false;
+            window.setTimeout(function() {
+                btn.innerHTML = btnText;
+            }, 1000);
+            window.clearTimeout(timeout);
         }
     };
 }
