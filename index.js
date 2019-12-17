@@ -6,6 +6,15 @@ function init() {
     globalVars.timesIcon = `<i class="fa fa-times fa-3x"></i>`;
 
     globalVars.serverErrorText = '<h1>Server error <i class="fa fa-frown-o"></i></h1>';
+
+    showModal();
+}
+
+const showModal = () => {
+    const now = new Date();
+    if (now.getHours() >= 23 || now.getHours() <= 7) {
+        $("#reminderModal").modal('show');
+    }
 }
 
 $(document).ready(function(){
