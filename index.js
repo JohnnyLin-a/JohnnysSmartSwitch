@@ -11,8 +11,10 @@ function init() {
 }
 
 const showModal = () => {
-    const now = new Date();
-    if (now.getHours() >= 23 || now.getHours() <= 7) {
+    const now = new Date().toLocaleTimeString("en-GB", { timeZone: "America/Toronto"});
+    const hour = parseInt(now.substr(0, now.indexOf(":")));
+
+    if (hour >= 23 || hour <= 7) {
         $("#reminderModal").modal('show');
     }
 }
