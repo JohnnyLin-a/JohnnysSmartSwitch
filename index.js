@@ -7,7 +7,7 @@ function init() {
 
     globalVars.serverErrorText = '<h1>Server error <i class="fa fa-frown-o"></i></h1>';
 
-    showModal();
+    // showModal();
 }
 
 const showModal = () => {
