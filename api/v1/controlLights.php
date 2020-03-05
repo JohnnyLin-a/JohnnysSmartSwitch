@@ -45,7 +45,11 @@ switch ($_GET['control']) {
 
 
 if (isset($success) && $success == 1) {
-    echo '{ "success": true }';
+    $data['success'] = true;
+
 } else {
-    echo '{ "success": false }';
+    $data['success'] = true;
 }
+
+header('Content-Type: application/json');
+echo json_encode($data);

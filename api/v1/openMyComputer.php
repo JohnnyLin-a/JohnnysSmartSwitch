@@ -4,4 +4,6 @@ include '../../helpers/wol.php';
 wol();
 
 //return json
-echo '{ "success": true }';
+$data['success'] = true;
+header('Content-Type: application/json');
+echo json_encode($data);
