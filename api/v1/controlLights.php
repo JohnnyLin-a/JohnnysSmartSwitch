@@ -48,7 +48,7 @@ if (isset($success) && $success == 1) {
     $data['success'] = true;
 
 } else {
-    $data['success'] = true;
+    $data['success'] = false;
 }
 
 header('Content-Type: application/json');
