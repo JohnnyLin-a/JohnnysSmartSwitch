@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.prod
+    container_name: app
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www
+    network_mode: host
+  
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    network_mode: host
