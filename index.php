@@ -23,15 +23,11 @@
                     </button>
                 </div>
             </div>
-            <div class="row text-center">
-                <div class="col-lg-12 text-center">
+            <div class='container'>
+                <div class='container lights-buttons-container'>
                     <button type="button" id="openLightsBtn" class="btn btn-success btn-lg btn-block mainMenuBtn">
                         <h1><i class="fa fa-eye"></i> Open lights!</h1>
                     </button>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-lg-12 text-center">
                     <button type="button" id="closeLightsBtn" class="btn btn-danger btn-lg btn-block mainMenuBtn">
                         <h1><i class="fa fa-eye-slash"></i> Close lights!</h1>
                     </button>
@@ -41,20 +37,19 @@
 
         <div id="reminderModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
-        
-            <div class="modal-content">
-                <div class="modal-header">
-                <h4 class="modal-title">Reminder</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Reminder</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- <h3>Don't forget to open the humidifier!</h3> -->
+                        <h3>Do you really wanna open the computer at this time?</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="yes-really-button btn btn-success btn-block" data-dismiss="modal">Yes</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                <h3>Don't forget to open the humidifier!</h3>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        
             </div>
         </div>
     </body>
