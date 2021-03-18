@@ -4,9 +4,10 @@
         <meta charset='UTF-8'> 
         <title>Johnny's smart switch</title>
         <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico'/>
-        <link rel='stylesheet' href='index.css?v=<?php echo date('YmdHis') ?>'>
+        <?php // ?v=1.0001 ?>
+        <link rel='stylesheet' href='index.css?v=1.0001'>
         <script src='https://unpkg.com/jquery@3.6.0/dist/jquery.min.js'></script>
-        <script type='text/javascript' src='index.js?v=<?php echo date('YmdHis') ?>'></script>
+        <script type='text/javascript' src='index.js?v=1.0001'></script>
         <script src='https://unpkg.com/bootstrap@4.6.0/dist/js/bootstrap.min.js'></script>
         <link rel='stylesheet' href='https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css'>
         <link rel='stylesheet' href='https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css'>
