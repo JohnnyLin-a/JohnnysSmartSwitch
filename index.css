@@ -1,9 +1,5 @@
 .mainMenuBtn {
-    height: 120px;
-}
-
-.row {
-    padding: 30px;
+    height: calc(var(--vh, 1vh) * 10);
 }
 
 .yes-really-button.btn.btn-success.btn-block {
@@ -17,11 +13,42 @@
 
 .btn.btn-success.btn-lg.btn-block.mainMenuBtn {
     width: 50%;
-    margin-right: 1rem;
+    margin-right: calc(var(--vh, 1vh) * 1);
 }
 
 .btn.btn-danger.btn-lg.btn-block.mainMenuBtn {
     width: 50%;
     margin-top: 0;
-    margin-left: 1rem;
+    margin-left: calc(var(--vh, 1vh) * 1);
+}
+
+h1.main-title {
+    font-size: 4rem !important;
+    margin-bottom: 0;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+div.jumbotron.text-center {
+    height: calc(var(--vh, 1vh) * 20);
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.main-buttons-container {
+    height: calc(var(--vh, 1vh) * 80);
+    justify-content: center;
+}
+
+.buttons-row {
+    margin-top: calc(var(--vh, 1vh) * 1);
+    margin-bottom: calc(var(--vh, 1vh) * 1);
 }

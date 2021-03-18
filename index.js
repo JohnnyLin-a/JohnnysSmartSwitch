@@ -1,5 +1,11 @@
 var globalVars = {};
 
+// Update vh to match real usable height
+document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+window.addEventListener('resize', () => {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+});
+
 function init() {
     globalVars.loadingIcon = `<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>`;
     globalVars.checkIcon = `<i class="fa fa-check fa-3x"></i>`;
